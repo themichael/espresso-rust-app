@@ -9,7 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build Rust binary
+    - name: Build/Test Rust binary
       run: cargo build --verbose 
     - name: Run tests
       run: cargo test --verbose
+
+      # For storing artifacts and enumeration based on run number
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: hello-rust${{ github.run_numberr }}
+        path: target/debug/hello_world
