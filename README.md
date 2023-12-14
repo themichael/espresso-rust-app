@@ -8,8 +8,10 @@ Then I have the artifact uploaded with the build run number for convenience.
 I created secrets to be used to login to ghcr so I can build and push the image.
 
 ## Dockerfile
-I wanted to create a multi-stage build where the first stage compiles the application and is moved to the second stage so the image would be smaller,
-but the instructions did say to use workflow to do the application binary.
+## Dockerfile
+I wanted to use an alpne image to run the binary but I didnt really have time to fix the issue of the binary not
+running in the alpine container because I need to compile the binary with --target=x86_64-unknown-linux-musl but 
+i might fix this issue before you read this
 I added this:
 ```
 
