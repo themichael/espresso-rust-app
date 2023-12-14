@@ -16,7 +16,7 @@ jobs:
 
       # For storing artifacts and enumeration based on run number
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: hello-rust${{ github.run_number }}
         path: target/debug/hello_world
